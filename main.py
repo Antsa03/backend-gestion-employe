@@ -106,3 +106,7 @@ async def delete_employe(num_emp: int, db: db_dependency):
     db.delete(db_employe)
     db.commit()
     return {"message": "L'employé a été supprimé avec succès"}
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
